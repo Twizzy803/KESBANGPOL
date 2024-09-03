@@ -12,7 +12,7 @@ include "include\koneksi.php";
 
 <body>
     <h1>Formulir Pengajuan, Legalitas dan Rencana Kerja Organisasi Masyarakat Kota Batu</h1>
-    <form action="">
+    <form action="proses_form.php" method="POST" enctype="multipart/form-data">
         <div class="pemohon">
             <label for="pemohon">Nama Pemohon</label> <br>
             <input type="text" name="pemohon" id="pemohon" class="form-control" placeholder="Default input" aria-label="default input example">
@@ -25,9 +25,9 @@ include "include\koneksi.php";
             <label for="email">Email</label> <br>
             <input type="text" name="email" id="email" class="form-control" placeholder="Default input" aria-label="default input example">
         </div>
-        <div class="pass">
-            <label for="pass">Password (Untuk Daftar Akun)</label> <br>
-            <input type="text" name="pass" id="pass" class="form-control" placeholder="Default input" aria-label="default input example">
+        <div class="password">
+            <label for="password">Password (Untuk Daftar Akun)</label> <br>
+            <input type="password" name="password" id="password" class="form-control" placeholder="********" aria-label="default input example">
         </div>
         <div class="ormas">
             <label for="ormas">Nama Organisasi</label> <br>
@@ -43,34 +43,26 @@ include "include\koneksi.php";
         </div>
         <div class="list">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="politik" id="politik">
-                <label class="form-check-label" for="politik">
-                    Politik
-                </label>
+                <input class="form-check-input" type="radio" name="kategori" value="politik" id="politik">
+                <label class="form-check-label" for="politik">Politik</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="lingkungan" id="lingkungan">
-                <label class="form-check-label" for="lingkungan">
-                    Lingkungan
-                </label>
+                <input class="form-check-input" type="radio" name="kategori" value="lingkungan" id="lingkungan">
+                <label class="form-check-label" for="lingkungan">Lingkungan</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="pertahanan" id="pertahanan">
-                <label class="form-check-label" for="pertahanan">
-                    Pertahanan dan Keamanan
-                </label>
+                <input class="form-check-input" type="radio" name="kategori" value="pertahanan" id="pertahanan">
+                <label class="form-check-label" for="pertahanan">Pertahanan dan Keamanan</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="pendidikan" id="pendidikan">
-                <label class="form-check-label" for="pendidikan">
-                    Pendidikan
-                </label>
+                <input class="form-check-input" type="radio" name="kategori" value="pendidikan" id="pendidikan">
+                <label class="form-check-label" for="pendidikan">Pendidikan</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="kosong" id="kosong">
-                <label class="form-check-label" for="kosong">
+                <input class="form-check-input" type="radio" name="kategori" value="lainnya" id="lainnya">
+                <label class="form-check-label" for="lainnya">
                     Yang lain:
-                    <input type="text" name="" id="" class="form-control" placeholder="Default input" aria-label="default input example">
+                    <input type="text" name="kategori_lain" id="kategori_lain" class="form-control" placeholder="Default input" aria-label="default input example">
                 </label>
             </div>
         </div>
@@ -84,6 +76,7 @@ include "include\koneksi.php";
         </div>
         <button name="kirim" type="submit">KIRIM</button>
     </form>
+
 
 </body>
 
