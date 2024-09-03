@@ -1,4 +1,7 @@
-<?php include "assets\include\koneksi.php" ?>
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,10 +34,23 @@
 
             <div class="col-md-3 text-end">
                 <div class="akun">
-                    <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='login.php'">Login</button>
-                    <button type="button" class="btn btn-primary">Sign-up</button>
+                    <?php if (isset($_SESSION['email'])) : ?>
+                        <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='include/keluar.php'">KELUAR</button>
+                        <?php if ($_SESSION['role'] == 'admin') {
+                            echo "<a class='btn text-dark fw-bold' href='admin\index.php'>ADMIN</a>";
+                        } ?>
+                    <?php else : ?>
+                        <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='login.php'">MASUK</button>
+                        <button type="button" class="btn btn-primary" onclick="location.href='daftar.php'">DAFTAR</button>
+                    <?php endif;  ?>
                 </div>
             </div>
+
+            <?php if (isset($_GET['dilarang'])) : ?>
+                <div class="container">
+                    <button type="button" class="btn btn-danger mb-4 uppercase" style="width: 100%">anda bukan admin !</button>
+                </div>
+            <?php endif; ?>
 
             <!-- <div id="myMenu" class="iconmenu">
                 <a href="#mySidebar" class="hambergermenu" onclick="openNav()">
