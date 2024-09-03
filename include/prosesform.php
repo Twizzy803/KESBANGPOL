@@ -55,12 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = "INSERT INTO pendaftar (pemohon, telp, email, pass, ormas, alamat, struktur, kategori, jumlah, dokumen) 
               VALUES ('$pemohon', '$telp', '$email', '$pass', '$ormas', '$alamat', '$struktur', '$kategori', '$jumlah', '$file_name')";
 
-    if (mysqli_query($koneksi, $query)) {
+    if (mysqli_query($connection, $query)) {
         echo "Data berhasil disimpan!";
         // Jika berhasil, Anda dapat menyimpan informasi penting ke session, misalnya:
         $_SESSION['pemohon'] = $pemohon;
         // Redirect atau tampilkan pesan sukses
     } else {
-        echo "Error: " . mysqli_error($koneksi);
+        echo "Error: " . mysqli_error($connection);
     }
 }
