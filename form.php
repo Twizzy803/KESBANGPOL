@@ -12,7 +12,7 @@ include "include\koneksi.php";
 
 <body>
     <h1>Formulir Pengajuan, Legalitas dan Rencana Kerja Organisasi Masyarakat Kota Batu</h1>
-    <form action="proses_form.php" method="POST" enctype="multipart/form-data">
+    <form action="prosesform.php" method="POST" enctype="multipart/form-data">
         <div class="pemohon">
             <label for="pemohon">Nama Pemohon</label> <br>
             <input type="text" name="pemohon" id="pemohon" class="form-control" placeholder="Default input" aria-label="default input example">
