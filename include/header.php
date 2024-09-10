@@ -15,7 +15,7 @@ session_start();
 </head>
 
 <body>
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 border-bottom">
         <div class="container">
             <div class="col-md-3 mb-2 mb-md-0">
                 <a href="index.php">
@@ -38,10 +38,10 @@ session_start();
                         <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='include/keluar.php'">KELUAR</button>
                         <?php if ($_SESSION['role'] == 'admin') {
                             echo "<a class='btn text-dark fw-bold' href='admin\index.php'>ADMIN</a>";
+                            echo "<a class='btn text-dark fw-bold' href='layers\daftar.php'>DAFTAR</a>";
                         } ?>
                     <?php else : ?>
-                        <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='login.php'">MASUK</button>
-                        <button type="button" class="btn btn-primary" onclick="location.href='daftar.php'">DAFTAR</button>
+                        <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='layers\\login.php'">MASUK</button>
                     <?php endif;  ?>
                 </div>
             </div>

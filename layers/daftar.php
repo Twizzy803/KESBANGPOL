@@ -1,5 +1,5 @@
 <?php
-include "include\koneksi.php";
+include "..\include\cekdaftar.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +14,9 @@ include "include\koneksi.php";
 </head>
 
 <body>
-    <div class="login">
-        <h1>Login</h1>
-        <form action="include\ceklogin.php" method="POST">
+    <div class="daftar">
+        <h1>Daftar</h1>
+        <form action="..\include\cekdaftar.php" method="POST">
             <div class="email">
                 <label for="email">Email</label> <br>
                 <input type="email" name="email" id="email" placeholder="name@google.com">
@@ -25,10 +25,7 @@ include "include\koneksi.php";
                 <label for="password">Password</label> <br>
                 <input type="password" name="password" id="password" placeholder="********">
             </div>
-            <button name="masuk" type="submit">MASUK</button>
-            <p class="sign-in">Belum Punya Akun?
-                <a href="daftar.php">Daftar</a>
-            </p>
+            <button name="daftar" type="submit">DAFTAR</button>
         </form>
     </div>
 

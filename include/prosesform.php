@@ -1,6 +1,7 @@
 <?php
-include "include/koneksi.php"; // Menyertakan file koneksi database
-session_start(); // Memulai session
+// Sertakan file koneksi ke database
+include "koneksi.php";
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ambil data dari form
@@ -30,10 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $file_name = '';
     if (isset($_FILES['dokumen']) && $_FILES['dokumen']['error'] == 0) {
         $allowed = ['jpg', 'jpeg', 'png', 'pdf', 'docx', 'mp4'];
-        $file_name = $_FILES['dokumen']['name'];
+        $file_name = preg_replace('/[^A-Za-z0-9\-\_\.]/', '_', $_FILES['dokumen']['name']); // Ganti karakter khusus
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
         $file_tmp = $_FILES['dokumen']['tmp_name'];
-        $upload_dir = 'uploads/';
+        $upload_dir = '../uploads/';
 
         if (!in_array($file_ext, $allowed)) {
             echo "Format file tidak diizinkan!";
@@ -51,16 +52,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Query untuk menyimpan data ke database
-    // Langsung menyimpan password tanpa hashing
     $query = "INSERT INTO pendaftar (pemohon, telp, email, pass, ormas, alamat, struktur, kategori, jumlah, dokumen) 
               VALUES ('$pemohon', '$telp', '$email', '$pass', '$ormas', '$alamat', '$struktur', '$kategori', '$jumlah', '$file_name')";
 
+    // Eksekusi query dan cek apakah data berhasil disimpan
     if (mysqli_query($connection, $query)) {
-        echo "Data berhasil disimpan!";
-        // Jika berhasil, Anda dapat menyimpan informasi penting ke session, misalnya:
+        // Jika berhasil, simpan informasi ke session
         $_SESSION['pemohon'] = $pemohon;
-        // Redirect atau tampilkan pesan sukses
+
+        // Redirect ke index.php
+        header("Location: ../index.php");
+        exit(); // Pastikan untuk menghentikan eksekusi script setelah redirect
     } else {
+        // Tampilkan pesan kesalahan jika query gagal
         echo "Error: " . mysqli_error($connection);
     }
 }

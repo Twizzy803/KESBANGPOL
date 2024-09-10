@@ -1,5 +1,5 @@
 <?php
-include "include\koneksi.php";
+include "..\include\koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@ include "include\koneksi.php";
 
 <body>
     <h1>Formulir Pengajuan, Legalitas dan Rencana Kerja Organisasi Masyarakat Kota Batu</h1>
-    <form action="prosesform.php" method="POST" enctype="multipart/form-data">
+    <form action="include\prosesform.php" method="POST" enctype="multipart/form-data">
         <div class="pemohon">
             <label for="pemohon">Nama Pemohon</label> <br>
             <input type="text" name="pemohon" id="pemohon" class="form-control" placeholder="Default input" aria-label="default input example">
@@ -25,9 +25,9 @@ include "include\koneksi.php";
             <label for="email">Email</label> <br>
             <input type="text" name="email" id="email" class="form-control" placeholder="Default input" aria-label="default input example">
         </div>
-        <div class="password">
-            <label for="password">Password (Untuk Daftar Akun)</label> <br>
-            <input type="password" name="password" id="password" class="form-control" placeholder="********" aria-label="default input example">
+        <div class="pass">
+            <label for="pass">Password (Untuk Daftar Akun)</label> <br>
+            <input type="password" name="pass" id="pass" class="form-control" placeholder="********" aria-label="default input example">
         </div>
         <div class="ormas">
             <label for="ormas">Nama Organisasi</label> <br>

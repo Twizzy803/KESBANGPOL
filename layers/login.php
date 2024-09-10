@@ -1,5 +1,5 @@
 <?php
-include "include\cekdaftar.php";
+include "..\include\koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,14 +9,14 @@ include "include\cekdaftar.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\style.css">
     <title>INDOMAS</title>
 </head>
 
 <body>
-    <div class="daftar">
-        <h1>Daftar</h1>
-        <form action="include\cekdaftar.php" method="POST">
+    <div class="login">
+        <h1>Login</h1>
+        <form action="..\include\ceklogin.php" method="POST">
             <div class="email">
                 <label for="email">Email</label> <br>
                 <input type="email" name="email" id="email" placeholder="name@google.com">
@@ -25,10 +25,7 @@ include "include\cekdaftar.php";
                 <label for="password">Password</label> <br>
                 <input type="password" name="password" id="password" placeholder="********">
             </div>
-            <button name="daftar" type="submit">DAFTAR</button>
-            <p class="sign-in">Sudah Punya Akun
-                <a href="login.php">Masuk</a>
-            </p>
+            <button name="masuk" type="submit">MASUK</button>
         </form>
     </div>
 
