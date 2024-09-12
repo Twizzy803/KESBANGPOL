@@ -11,29 +11,25 @@ if (isset($_POST['masuk'])) {
     $select_login = mysqli_query($connection, $query);
 
     if (!$select_login) {
-        die("Query Failed" . mysqli_error($connection));
-    }
-    while ($row = mysqli_fetch_assoc($select_login)) {
-        $db_email = $row['email'];
-        $db_pass = $row['password'];
-        $db_role = $row['role'];
+        die("Query Failed: " . mysqli_error($connection));
     }
 
-    if ($email !== $db_email && $pass !== $db_pass) {
-        header('Location: ../login.php?gagal');
-    } elseif ($email === $db_email && $pass === $db_pass) {
-        $_SESSION['ormas'] = $select_login;
-        $_SESSION['email'] = $db_email;
-        $_SESSION['role'] = $db_role;
+    $ambil = mysqli_fetch_assoc($select_login);
+
+    if ($ambil) {
+        // Data pengguna ditemukan, simpan ke dalam session
+        $_SESSION['id_login'] = $ambil['id_login'];  // Ambil ID login dari database
+        $_SESSION['email'] = $ambil['email'];
+        $_SESSION['role'] = $ambil['role'];
+
+        // Cek peran pengguna
         if ($_SESSION['role'] === 'admin') {
             header('Location: ../admin');
         } else {
-            if ($_SESSION["ormas"] = $select_login) {
-                header('location: ../checkout.php');
-            } else {
-                echo "<script>alert('Anda Harus Login Dahulu !!')</script>";
-            }
             header('Location: ../index.php');
         }
+    } else {
+        // Jika login gagal, redirect ke halaman login dengan pesan gagal
+        header('Location: ../login.php?gagal');
     }
 }

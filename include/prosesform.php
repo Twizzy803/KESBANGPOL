@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $file_name = preg_replace('/[^A-Za-z0-9\-\_\.]/', '_', $_FILES['dokumen']['name']); // Ganti karakter khusus
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
         $file_tmp = $_FILES['dokumen']['tmp_name'];
-        $upload_dir = '../uploads/';
+        $upload_dir = '../berkasdaftar/';
 
         if (!in_array($file_ext, $allowed)) {
             echo "Format file tidak diizinkan!";

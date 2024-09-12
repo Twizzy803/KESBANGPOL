@@ -81,6 +81,9 @@ footer {
     display: flex;
     width: 2rem;
   }
+  .card {
+    width: 100% !important;
+  }
 }
 @media (min-width: 360px) {
   .container ul {

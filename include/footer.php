@@ -16,7 +16,7 @@
                     <use xlink:href="#bootstrap"></use>
                 </svg>
             </a>
-            <span class="mb-3 mb-md-0 text-muted">© 2024 BAKESBANGPOL || Agil.Ferdi</span>
+            <span class="mb-3 mb-md-0 text-muted">© 2024 BAKESBANGPOL || Agil_Ferdi</span>
         </div>
 
         </body>
