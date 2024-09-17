@@ -98,7 +98,7 @@ include "../include/koneksi.php" ?>
                             <td><?php echo $data['struktur']; ?></td>
                             <td><?php echo $data['kategori']; ?></td>
                             <td><?php echo $data['jumlah']; ?></td>
-                            <td><a href="<?php echo $data['dokumen']; ?>">Download</a></td>
+                            <td><a href="../berkasdaftar/<?php echo $data['dokumen']; ?>">Download</a></td>
                         </tr>
                         <?php $no++;  ?>
                     <?php } ?>
