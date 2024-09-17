@@ -1,25 +1,22 @@
-<?php include "../include/koneksi.php";
-ob_start();
-session_start();
-if (isset($_SESSION['role'])) {
-    if ($_SESSION['role'] !== 'admin') {
-        header("Location: ../index.php?dilarang");
-    }
-} ?>
+<?php
+include "include/cekdaftar.php";
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../admin/node_modules/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css">
     <title>ADMIN INDOMAS</title>
 </head>
 
 <body>
+    <!-- Sidebar -->
     <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px; height: 46.7rem; position: sticky; z-index: 9999;">
         <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <svg class="bi pe-none me-2" width="40" height="32">
@@ -30,7 +27,7 @@ if (isset($_SESSION['role'])) {
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="index.php" class="nav-link active" aria-current="page">
+                <a href="index.php" class="nav-link link-body-emphasis" aria-current="page">
                     <i class="bi bi-house-door"></i>
                     Home
                 </a>
@@ -42,7 +39,7 @@ if (isset($_SESSION['role'])) {
                 </a>
             </li>
             <li>
-                <a href="daftar.php" class="nav-link link-body-emphasis">
+                <a href="daftar.php" class="nav-link active">
                     <i class="bi bi-person-plus"></i>
                     Daftar Akun
                 </a>
@@ -66,6 +63,25 @@ if (isset($_SESSION['role'])) {
         </div>
     </div>
 
+    <div class="container">
+        <div class="daftar">
+            <h1>Daftar Akun</h1>
+            <hr>
+            <form action="include/cekdaftar.php" method="POST">
+                <div class="email">
+                    <label for="email">Email</label> <br>
+                    <input type="email" name="email" id="email" placeholder="name@google.com">
+                </div>
+                <div class="pass">
+                    <label for="password">Password</label> <br>
+                    <input type="password" name="password" id="password" placeholder="********">
+                </div>
+                <button name="daftar" type="submit">DAFTAR</button>
+            </form>
+        </div>
+    </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="style.css">
-  <title>Admin Base</title>
+  <title>ADMIN INDOMAS</title>
 </head>
 
 <body>
@@ -17,12 +17,36 @@
     <div class="home">
       <h1>Home</h1>
       <hr>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Data Ormas</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-          <a href="#" class="card-link">Card link</a>
-          <i class="bi bi-file-earmark-bar-graph"></i>
+      <div class="home1">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Data Ormas</h5>
+            <div class="fungsi" style="margin-right: 1rem;">
+              <i class="bi bi-file-earmark-bar-graph"></i>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+            </div>
+            <a href="data.php" class="card-link">Card link</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Daftar Akun</h5>
+            <div class="fungsi" style="margin-right: 7rem;">
+              <i class="bi bi-person-plus"></i>
+              <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+            </div>
+            <a href="daftar.php" class="card-link">Card link</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Akun Ormas</h5>
+            <div class="fungsi" style="margin-right: 1rem;">
+              <i class="bi bi-person-badge"></i>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+            </div>
+            <a href="akun.php" class="card-link">Card link</a>
+          </div>
         </div>
       </div>
     </div>

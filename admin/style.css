@@ -7,8 +7,27 @@ body {
   display: flex;
 }
 .container {
-    margin: 1%;
+  margin: 1%;
 }
 .home {
-    width: 100%;
+  width: 100%;
+}
+.home1 {
+  display: flex;
+  justify-content: space-around;
+}
+.fungsi {
+  display: inline-flex;
+  align-items: center;
+}
+.card i {
+  font-size: 3rem;
+}
+.daftar {
+  width: 100%;
+}
+.daftar form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

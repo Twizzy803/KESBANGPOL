@@ -1,11 +1,5 @@
-<?php include "../include/koneksi.php";
-ob_start();
-session_start();
-if (isset($_SESSION['role'])) {
-    if ($_SESSION['role'] !== 'admin') {
-        header("Location: ../index.php?dilarang");
-    }
-} ?>
+<?php
+include "../include/koneksi.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +8,13 @@ if (isset($_SESSION['role'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../admin/node_modules/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css">
     <title>ADMIN INDOMAS</title>
 </head>
 
 <body>
+    <!-- Sidebar -->
     <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px; height: 46.7rem; position: sticky; z-index: 9999;">
         <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <svg class="bi pe-none me-2" width="40" height="32">
@@ -30,7 +25,7 @@ if (isset($_SESSION['role'])) {
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="index.php" class="nav-link active" aria-current="page">
+                <a href="index.php" class="nav-link link-body-emphasis" aria-current="page">
                     <i class="bi bi-house-door"></i>
                     Home
                 </a>
@@ -48,7 +43,7 @@ if (isset($_SESSION['role'])) {
                 </a>
             </li>
             <li>
-                <a href="akun.php" class="nav-link link-body-emphasis">
+                <a href="akun.php" class="nav-link active">
                     <i class="bi bi-person-badge"></i>
                     Akun Ormas
                 </a>
@@ -65,6 +60,44 @@ if (isset($_SESSION['role'])) {
             </ul>
         </div>
     </div>
+
+    <div class="container">
+        <div class="daftar">
+            <h1>Akun Ormas</h1>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php $no = 1; ?>
+                    <?php $ambil = $connection->query("SELECT * FROM users_login WHERE id_login"); ?>
+                    <?php while ($data = $ambil->fetch_assoc()) { ?>
+
+                        <tr>
+                            <td><?php echo $no; ?></td>
+                            <td><?php echo $data['email']; ?></td>
+                            <td><?php echo $data['password']; ?></td>
+                            <td><?php echo $data['role']; ?></td>
+                        </tr>
+                        <?php $no++;  ?>
+                    <?php } ?>
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

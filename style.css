@@ -31,9 +31,6 @@ header {
 .iconmenu img {
   display: none;
 }
-.sidebar {
-  display: none;
-}
 .login {
   display: flex;
   flex-direction: column;

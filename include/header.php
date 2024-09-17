@@ -39,7 +39,6 @@ session_start();
                         <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='include/keluar.php'">KELUAR</button>
                         <?php if ($_SESSION['role'] == 'admin') {
                             echo "<a class='btn text-dark fw-bold' href='admin\index.php'>ADMIN</a>";
-                            echo "<a class='btn text-dark fw-bold' href='layers\daftar.php'>DAFTAR</a>";
                         } ?>
                     <?php else : ?>
                         <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='layers\\login.php'">MASUK</button>

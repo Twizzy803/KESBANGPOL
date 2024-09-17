@@ -19,7 +19,9 @@ include "include\header.php"; ?>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Website Indomas merupakan sarana untuk mendaftarkan organisasi dan memperoleh pengakuan resmi dari negara. Selain itu, website ini juga menyediakan informasi mengenai kegiatan yang sedang dilakukan oleh organisasi yang sudah terdaftar di Badan Kesatuan Bangsa dan Politik.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <?php if (!isset($_SESSION['email'])) : ?>
           <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" onclick="location.href='layers\\form.php'">Form Pengajuan Indomas</button>
+          <?php endif; ?>
           <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" onclick="location.href='//drive.google.com/file/d/17WajAkNz1IHmzVxPsbR3fPPyIAg_GVAG/view?usp=sharing'">Panduan Pengajuan Indomas</button>
         </div>
       </div>

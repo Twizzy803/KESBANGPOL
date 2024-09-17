@@ -1,6 +1,6 @@
 <?php
 // Load Komponen DB
-include "koneksi.php";
+include "C:\\xampp\htdocs\KESBANGPOL\include\koneksi.php";
 session_start();
 if (isset($_POST['daftar'])) {
     $email = $_POST['email'];
