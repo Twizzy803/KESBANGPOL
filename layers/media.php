@@ -39,6 +39,7 @@
             <div class="card-body">
                 <p class="card-text">' . $cerita . '</p>
                 <p class="card-text"><small class="text-muted">Diceritakan oleh: ' . $email . '</small></p>
+                
             </div>
         </div>';
             }
