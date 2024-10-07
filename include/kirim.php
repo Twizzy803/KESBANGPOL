@@ -3,32 +3,42 @@ include "koneksi.php";
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Validasi: pastikan cerita dan foto tidak kosong
+    if (empty($_POST['cerita'])) {
+        echo "Cerita harus diisi!";
+        exit();
+    }
+
+    if (empty($_FILES['foto']['name'])) {
+        echo "Foto harus di-upload!";
+        exit();
+    }
+
     $id_login = $_POST['id_login'];
     $cerita = $_POST['cerita'];
 
-    // Handle file upload
+    // Upload foto jika ada
     $file_name = '';
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
         $file_tmp = $_FILES['foto']['tmp_name'];
         $file_name = $_FILES['foto']['name'];
-
-        // Buat nama file unik
-        $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-        $file_name = uniqid() . '_' . preg_replace('/[^a-zA-Z0-9-_\.]/', '_', $file_name);
+        // Ganti nama file untuk menghindari duplikat
+        $file_name = preg_replace('/[^a-zA-Z0-9-_\.]/', '_', $file_name);
         $upload_dir = '../foldercerita/';
-        $upload_path = $upload_dir . $file_name;
+        $upload_path = $upload_dir . uniqid() . "_" . $file_name;
 
-        // Pindahkan file ke folder yang diinginkan
         if (!move_uploaded_file($file_tmp, $upload_path)) {
             echo "Gagal mengupload file!";
-            exit;
+            exit();
         }
+    } else {
+        echo "Harap upload foto!";
+        exit();
     }
 
-    // Simpan data ke database
-    $query = "INSERT INTO cerita_saja (id_login, cerita, foto) VALUES ('$id_login', '$cerita', '$file_name')";
+    // Masukkan data ke database
+    $query = "INSERT INTO cerita_saja (id_login, cerita, foto) VALUES ('$id_login', '$cerita', '$upload_path')";
     if (mysqli_query($connection, $query)) {
-        // Redirect setelah berhasil
         header("Location: ../index.php");
         exit();
     } else {

@@ -1,4 +1,6 @@
-<?php include "include/sidebar.php"; ?>
+<?php
+include "include/sidebar.php";
+include "function.php"; ?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -23,7 +25,7 @@
             <h5 class="card-title">Data Ormas</h5>
             <div class="fungsi" style="margin-right: 1rem;">
               <i class="bi bi-file-earmark-bar-graph"></i>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><?php getDataOrmas() ?></h6>
             </div>
             <a href="data.php" class="card-link">Card link</a>
           </div>
@@ -43,7 +45,7 @@
             <h5 class="card-title">Akun Ormas</h5>
             <div class="fungsi" style="margin-right: 1rem;">
               <i class="bi bi-person-badge"></i>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><?php getAkunOrmas() ?></h6>
             </div>
             <a href="akun.php" class="card-link">Card link</a>
           </div>

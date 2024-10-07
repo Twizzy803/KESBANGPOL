@@ -13,8 +13,8 @@
         <h1>Ceritakan saja</h1>
         <?php if (isset($_SESSION['email'])) : ?>
             <form action="include/kirim.php" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: row;">
-                <input type="text" name="cerita" id="cerita" placeholder="Ceritakan Saja">
-                <input class="form-control" name="foto" id="foto" type="file">
+                <input type="text" name="cerita" id="cerita" placeholder="Ceritakan Saja" required>
+                <input class="form-control" name="foto" id="foto" type="file" required>
                 <input type="hidden" name="id_login" value="<?php echo $_SESSION['id_login']; ?>">
                 <button name="upload" type="submit">Upload</button>
             </form>
