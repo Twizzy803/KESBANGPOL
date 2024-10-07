@@ -76,6 +76,10 @@ include "include/cekdaftar.php";
                     <label for="password">Password</label> <br>
                     <input type="password" name="password" id="password" placeholder="********">
                 </div>
+                <div class="nama_ormas">
+                    <label for="nama_ormas">Nama Ormas</label> <br>
+                    <input type="nama_ormas" name="nama_ormas" id="nama_ormas" placeholder="Nama Ormas">
+                </div>
                 <button name="daftar" type="submit">DAFTAR</button>
             </form>
         </div>

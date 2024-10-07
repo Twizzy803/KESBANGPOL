@@ -71,6 +71,7 @@ include "../include/koneksi.php"; ?>
                         <th scope="col">No</th>
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
+                        <th scope="col">Nama Ormas</th>
                         <th scope="col">Role</th>
                     </tr>
                 </thead>
@@ -84,6 +85,7 @@ include "../include/koneksi.php"; ?>
                             <td><?php echo $no; ?></td>
                             <td><?php echo $data['email']; ?></td>
                             <td><?php echo $data['password']; ?></td>
+                            <td><?php echo $data['nama_ormas']; ?></td>
                             <td><?php echo $data['role']; ?></td>
                         </tr>
                         <?php $no++;  ?>

@@ -22,7 +22,8 @@
         ?>
         <br>
         <!-- // Query untuk mengambil semua cerita -->
-        <?php $query = "SELECT c.cerita, c.foto, u.email FROM cerita_saja c JOIN users_login u ON c.id_login = u.id_login ORDER BY c.id_cerita DESC";
+        <?php
+        $query = "SELECT c.cerita, c.foto, c.tanggal, u.nama_ormas FROM cerita_saja c JOIN users_login u ON c.id_login = u.id_login ORDER BY c.tanggal DESC";
         $result = mysqli_query($connection, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -30,17 +31,24 @@
             while ($ambil = mysqli_fetch_assoc($result)) {
                 $cerita = $ambil['cerita'];
                 $foto = $ambil['foto'];
-                $email = $ambil['email']; // Bisa dipakai untuk menampilkan email pengguna yang mengunggah cerita
+                $tanggal = new DateTime($ambil['tanggal']);
+                $formatter = new IntlDateFormatter(
+                    'id_ID',
+                    IntlDateFormatter::LONG,
+                    IntlDateFormatter::NONE
+                );
+                $formatter_date = $formatter->format($tanggal);
+                $nama_ormas = $ambil['nama_ormas']; // Bisa dipakai untuk menampilkan email pengguna yang mengunggah cerita
 
                 // Tampilkan dalam bentuk card
                 echo '
         <div class="card" style="width: 45%; margin-bottom: 20px;">
-            <img src="foldercerita/' . $foto . '" class="card-img-top" alt="">
-            <div class="card-body">
-                <p class="card-text">' . $cerita . '</p>
-                <p class="card-text"><small class="text-muted">Diceritakan oleh: ' . $email . '</small></p>
-                
-            </div>
+        <div class="card-body">
+            <h4 class="card-text"><small class="text-bold">' . $nama_ormas . '</small></h4>
+            <p style= "font-size: 12px; color: gray;">' . $formatter_date . '</p>
+            <p class="card-text">' . $cerita . '</p>
+        </div>
+        <img src="foldercerita/' . $foto . '" class="card-img-top" alt="">
         </div>';
             }
         } else {
