@@ -15,17 +15,20 @@ include "..\include\koneksi.php";
 
 <body>
     <div class="login">
-        <h1>Login</h1>
-        <form action="..\include\ceklogin.php" method="POST">
+        <div class="logo_login">
+        <img src="../assets/gambar/logobatu.png" alt="">
+        <img src="../assets/gambar/polije.png" alt="" style="margin-left: 83px;">
+        </div>
+        <form id="form_login" action="..\include\ceklogin.php" method="POST">
+            <h2 style="font-weight: normal;">Login</h2>
             <div class="email">
-                <label for="email">Email</label> <br>
-                <input type="email" name="email" id="email" placeholder="name@google.com">
+                <input style="width: 210%; height: 40px; border-radius: 5px; border: 1px solid #4E4E4E;" type="email" name="email" id="email" placeholder="Email">
             </div>
             <div class="pass">
-                <label for="password">Password</label> <br>
-                <input type="password" name="password" id="password" placeholder="********">
+                <input style="width: 210%; height: 40px; border-radius: 5px; border: 1px solid #4E4E4E;" type="password" name="password" id="password" placeholder="Password">
             </div>
-            <button name="masuk" type="submit">MASUK</button>
+            <button style="width: 95%; height: 35px; border-radius: 5px; border: none; background-color: #00A650;font-family: 'Poppins', sans-serif; color: white; font-weight: bold;" 
+            name="masuk" type="submit">MASUK</button>
         </form>
     </div>
 

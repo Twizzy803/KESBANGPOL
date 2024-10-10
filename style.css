@@ -3,7 +3,8 @@
 body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  background-color: rgb(235, 235, 235);
+  /* background-color: rgb(235, 235, 235); */
+  background-color: white;
 }
 header {
   position: sticky;
@@ -11,15 +12,44 @@ header {
   top: 0;
   background-color: white;
 }
+.kotabatu {
+  background-image: url(assets/gambar/kotabatu.png);
+  width: 25%;
+  height: 79%; 
+  background-size: cover;
+}
 .inpo p {
   color: white !important;
 }
 #inpo {
   color: white !important;
 }
+.inpo button {
+  background-color: #00a650 !important;
+  border: none;
+}
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.logotext {
+  font-family: "Poppins", sans-serif;
+  color: #00a650;
+  font-weight: bold;
+}
+#btn_masuk {
+  border: none;
+  font-weight: bold;
+  color: white;
+  background-color: #00a650;
+}
+#btn_masuk:hover {
+  background-color: white;
+  transition-duration: 0.4s;
+  border: 2px solid #00a650;
+  font-weight: bold;
+  color: #00a650;
 }
 .akun {
   left: 40%;
@@ -38,7 +68,7 @@ header {
   margin-top: 10%;
 }
 .email {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .pass {
   margin-top: 5%;
@@ -48,6 +78,8 @@ header {
   width: 10px;
 }
 footer {
+  color: white;
+  background-color: #00a650;
   width: 100%;
 }
 .media {
@@ -57,6 +89,17 @@ footer {
 }
 #foto input[type="file"] {
   display: none;
+}
+.logo_login {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+}
+#form_login {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  align-items: flex-start;
 }
 
 @media (max-width: 768px) {
