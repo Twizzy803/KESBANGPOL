@@ -18,7 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validasi data (misalnya: cek apakah ada yang kosong)
     if (empty($pemohon) || empty($telp) || empty($email) || empty($pass) || empty($ormas) || empty($alamat) || empty($struktur) || empty($kategori) || empty($jumlah)) {
-        echo "Semua kolom wajib diisi!";
+        echo '<script language="javascript">';
+        echo 'alert("semua harus diisi!");';
+        echo 'window.location.href = "../layers/form.php";';
+        echo '</script>';
         exit;
     }
 
@@ -47,7 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
     } else {
-        echo "Harap unggah dokumen pendukung!";
+        echo '<script language="javascript">';
+        echo 'alert("Harap unggah dokumen pendukung!");';
+        echo 'window.location.href = "../layers/form.php";';
+        echo '</script>';
         exit;
     }
 
@@ -59,6 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_query($connection, $query)) {
         // Jika berhasil, simpan informasi ke session
         $_SESSION['pemohon'] = $pemohon;
+
+        $_SESSION['showModal'] = true;
+
 
         // Redirect ke index.php
         header("Location: ../index.php");

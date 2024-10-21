@@ -1,7 +1,5 @@
 <?php
 include "..\include\koneksi.php";
-ob_start();
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,32 +56,33 @@ session_start();
         <div class="pemohon">
             <label for="pemohon">Nama Pemohon</label> <br>
             <input type="text" name="pemohon" id="pemohon" class="form-control" placeholder="Nama Pemohon" aria-label="default input example">
-        </div>
+        </div><br>
         <div class="telp">
             <label for="telp">Nomor Telephone</label> <br>
             <input type="text" name="telp" id="telp" class="form-control" placeholder="Telp" aria-label="default input example">
-        </div>
-        <div class="email">
+        </div><br>
+        <div class="email" style="margin-top: 0;">
             <label for="email">Email</label> <br>
             <input type="text" name="email" id="email" class="form-control" placeholder="example@gmail.com" aria-label="default input example">
-        </div>
-        <div class="pass">
+        </div><br>
+        <div class="pass" style="margin-top: 0; margin-bottom: 0;">
             <label for="pass">Password (Untuk Daftar Akun)</label> <br>
             <input type="password" name="pass" id="pass" class="form-control" placeholder="********" aria-label="default input example">
-        </div>
+        </div><br>
         <div class="ormas">
             <label for="ormas">Nama Organisasi</label> <br>
             <input type="text" name="ormas" id="ormas" class="form-control" placeholder="Nama Ormas" aria-label="default input example">
-        </div>
+        </div><br>
         <div class="alamat">
             <label for="alamat">Alamat Kantor Organisasi</label> <br>
             <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Kantor" aria-label="default input example">
-        </div>
+        </div><br>
         <div class="struktur">
             <label for="struktur">Struktur Pengurus (Ketua, Sekretaris, Bendahara)</label> <br>
             <input type="text" name="struktur" id="struktur" class="form-control" placeholder="Struktur Pengurus" aria-label="default input example">
-        </div>
+        </div><br>
         <div class="list">
+            <label for="kajian">Bidang Kajian</label><br>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="kategori" value="politik" id="politik">
                 <label class="form-check-label" for="politik">Politik</label>
@@ -107,22 +106,22 @@ session_start();
                     <input type="text" name="kategori_lain" id="kategori_lain" class="form-control" placeholder="Lainnya" aria-label="default input example">
                 </label>
             </div>
-        </div>
+        </div><br>
         <div class="jumlah">
             <label for="jumlah">Jumlah Anggota</label> <br>
             <input type="text" name="jumlah" id="jumlah" class="form-control" placeholder="Jumlah Anggota" aria-label="default input example">
-        </div>
+        </div><br>
         <div class="mb-3">
             <label for="dokumen" class="form-label">Dokumen pendukung aktifitas, berupa foto, video, lokasi kantor, atau program rencana kerja</label>
-            <p style="font-size: small; color: #00000080;">Upload maksimum 5 file yang didukung. Maks 10 MB per file.</p>
+            <p style="font-size: small; color: #00000080; margin-top:-1%; margin-bottom: 0;">Upload maksimum 5 file yang didukung. Maks 10 MB per file.</p>
             <input class="form-control" name="dokumen" type="file" id="dokumen">
         </div> <br>
-        <button class="kirim" style="width: 98%;background-color: #00A650; border-radius: 5px; border: none; color: white; font-family: 'Poppins' sans-serif; font-weight: bold;">KIRIM</button>
+        <button id="jsKirim" class="kirim" name="kirim" type="submit" style=" width: 98%;background-color: #00A650; border-radius: 5px; border: none; color: white; font-family: 'Poppins' sans-serif; font-weight: bold;">KIRIM</button>
     </form>
 
     <?php include "../include/footer.php" ?>
-</body>
 
-<script src="../script.js"></script>
+    <script src="..\main.js"></script>
+</body>
 
 </html>

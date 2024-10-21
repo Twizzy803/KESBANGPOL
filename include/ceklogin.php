@@ -28,8 +28,10 @@ if (isset($_POST['masuk'])) {
         } else {
             header('Location: ../index.php');
         }
+        exit();
     } else {
         // Jika login gagal, redirect ke halaman login dengan pesan gagal
-        header('Location: ../login.php?gagal');
+        header('Location: ..\layers\login.php?gagal=1');
+        exit();
     }
 }

@@ -9,9 +9,6 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
-    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
     <title>INDOMAS</title>
 </head>
 
@@ -23,7 +20,8 @@ session_start();
                     <div class="kotabatu"></div>
                 </a>
                 <a class="logotext" href="index.php" style="margin-left: 5px; text-decoration: none;">
-                    <p>Kesbangpol</p> <p style="margin-top: -15px;">Kota Batu</p>
+                    <p>Kesbangpol</p>
+                    <p style="margin-top: -15px;">Kota Batu</p>
                 </a>
             </div>
 
@@ -31,9 +29,9 @@ session_start();
             <div class="col-md-3 text-end">
                 <div class="akun">
                     <?php if (isset($_SESSION['email'])) : ?>
-                        <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='include/keluar.php'">KELUAR</button>
+                        <button id="btn_keluar" type="button" class="btn btn-outline-primary me-2" onclick="location.href='include/keluar.php'">KELUAR</button>
                         <?php if ($_SESSION['role'] == 'admin') {
-                            echo "<a class='btn text-dark fw-bold' href='admin\index.php'>ADMIN</a>";
+                            echo "<a id='btn_admin' class='btn text fw-bold' href='admin\index.php'>ADMIN</a>";
                         } ?>
                     <?php else : ?>
                         <button id="btn_masuk" type="button" class="btn btn-outline-primary me-2" onclick="location.href='layers\\login.php'">MASUK</button>
@@ -51,7 +49,7 @@ session_start();
 
 
 
-    <script src="script.js"></script>
+    <script src="..\main.js"></script>
 </body>
 
 </html>

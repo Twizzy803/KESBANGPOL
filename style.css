@@ -3,7 +3,6 @@
 body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  /* background-color: rgb(235, 235, 235); */
   background-color: white;
 }
 header {
@@ -15,7 +14,7 @@ header {
 .kotabatu {
   background-image: url(assets/gambar/kotabatu.png);
   width: 25%;
-  height: 79%; 
+  height: 94%;
   background-size: cover;
 }
 .inpo p {
@@ -27,6 +26,11 @@ header {
 .inpo button {
   background-color: #00a650 !important;
   border: none;
+}
+.bg_aja {
+  background-image: url(bg1.png);
+  background-position: center;
+  background-size: 100%;
 }
 .container {
   display: flex;
@@ -51,6 +55,44 @@ header {
   font-weight: bold;
   color: #00a650;
 }
+#btn_keluar {
+  color: #00a650;
+  border: 2px solid #00a650;
+  font-weight: bold;
+}
+#btn_keluar:hover {
+  transition-duration: 0.4s;
+  background-color: #00a650;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+#btn_admin {
+  color: #00a650;
+}
+#btn_admin:hover {
+  border: 2px solid #00a650;
+}
+#Formbutton {
+  font-weight: bold !important;
+}
+#Formbutton:hover {
+  background-color: white !important;
+  transition-duration: 0.4s !important;
+  border: 2px solid #00a650;
+  font-weight: bold;
+  color: #00a650;
+}
+#Docbutton {
+  font-weight: bold !important;
+}
+#Docbutton:hover {
+  background-color: white !important;
+  transition-duration: 0.4s;
+  color: #00a650;
+  border: 2px solid #00a650;
+  font-weight: bold;
+}
 .akun {
   left: 40%;
 }
@@ -74,6 +116,13 @@ header {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+.masukbutton:hover {
+  background-color: white !important;
+  transition-duration: 0.4s;
+  color: #00a650 !important;
+  font-weight: bold;
+  border: 2px solid #00a650 !important;
+}
 .btn form {
   width: 10px;
 }
@@ -90,21 +139,56 @@ footer {
 #foto input[type="file"] {
   display: none;
 }
-.logo_login {
-  width: 5%;
-  display: flex;
-  justify-content: center;
-}
-#form_login {
-  display: flex;
+.form_login {
+  position: relative;
+  top: 40%;
   flex-direction: column;
-  width: 25%;
-  align-items: flex-start;
+}
+.form_login input {
+  width: 35rem;
+  height: 2.5rem;
+  border: 1px solid #4e4e4e;
+  border-radius: 10px;
+}
+.form_login button {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #00a650;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+.modal {
+  display: none; /* Modal disembunyikan secara default */
+  position: fixed;
+  z-index: 1; /* Pastikan modal berada di atas konten lainnya */
+  left: 0;
+  top: 0;
+  width: 100%; /* Lebar modal */
+  height: 100%; /* Tinggi modal */
+  overflow: auto; /* Jika konten lebih besar, tambahkan scroll */
+  background-color: rgb(0, 0, 0); /* Latar belakang semi-transparan */
+  background-color: rgba(0, 0, 0, 0.4); /* Efek transparansi */
+}
+.close {
+  display: none;
+}
+.modal-content {
+  text-align: center;
+  background-color: #fefefe;
+  margin: 15% auto; /* Menempatkan modal di tengah layar */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Lebar modal */
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .container ul li {
     display: none;
+  }
+  .inpo {
+    margin: -1%;
   }
   .sidebar {
     display: flex;
@@ -124,8 +208,11 @@ footer {
   .card {
     width: 100% !important;
   }
+  .login {
+    margin-top: 30%;
+  }
 }
-@media (min-width: 360px) {
+@media screen and (max-width: 429px) {
   .container ul {
     width: auto;
   }
@@ -137,5 +224,14 @@ footer {
   .iconmenu a {
     display: flex;
     align-items: center;
+  }
+  .bg_aja {
+    background-image: url(bg.jpg);
+  }
+  .login {
+    margin-top: 50%;
+  }
+  .form_login input {
+    width: 20rem;
   }
 }
