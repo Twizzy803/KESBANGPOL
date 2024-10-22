@@ -136,6 +136,12 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+.btn_upload {
+  color: white;
+  background-color: #00a650;
+  border: none;
+  border-radius: 5px;
+}
 #foto input[type="file"] {
   display: none;
 }
@@ -219,7 +225,7 @@ footer {
   .kotabatu {
     display: flex;
     align-items: center;
-    width: 2.5rem;
+    width: 3rem;
   }
   .iconmenu a {
     display: flex;

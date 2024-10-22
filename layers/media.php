@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules\bootstrap-icons\font\bootstrap-icons.min.css">
     <title>INDOMAS</title>
 </head>
 
 <body>
     <div class="media">
-        <h1>Ceritakan saja</h1>
+        <h1 style="font-weight: bold;">Kegiatan Ormas</h1>
         <?php if (isset($_SESSION['email'])) : ?>
             <form action="include\kirim.php" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: row;">
-                <input type="text" name="cerita" id="cerita" placeholder="Ceritakan Saja" required>
+                <input type="text" name="cerita" id="cerita" style="border-radius: 5px; border:1px solid" placeholder="Ceritakan Saja" required>
                 <input class="form-control" name="foto" id="jsFoto" type="file" style="display: none;" required>
                 <input type="hidden" name="id_login" value="<?php echo $_SESSION['id_login']; ?>">
-                <button name="upload" id="uploadButton" type="button">Foto/Video</button>
+                <button class="btn_upload" name="upload" id="uploadButton" type="button"><i class="bi bi-image-fill"></i>Foto</button>
                 <button name="submit" id="submitButton" type="submit" style="display: none;">Upload</button>
             </form>
         <?php endif
