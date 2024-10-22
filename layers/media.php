@@ -16,7 +16,7 @@
                 <input type="text" name="cerita" id="cerita" style="border-radius: 5px; border:1px solid" placeholder="Ceritakan Saja" required>
                 <input class="form-control" name="foto" id="jsFoto" type="file" style="display: none;" required>
                 <input type="hidden" name="id_login" value="<?php echo $_SESSION['id_login']; ?>">
-                <button class="btn_upload" name="upload" id="uploadButton" type="button"><i class="bi bi-image-fill"></i>Foto</button>
+                <button class="btn_upload" name="upload" id="uploadButton" type="button"><i class="bi bi-image-fill"></i>Foto</button> <!-- foto dan video saya tidak bisa gabungkan dan dibuat button lagi malas -->
                 <button name="submit" id="submitButton" type="submit" style="display: none;">Upload</button>
             </form>
         <?php endif
