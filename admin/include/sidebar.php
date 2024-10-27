@@ -15,17 +15,17 @@ if (isset($_SESSION['role'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../admin/node_modules/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../admin.css">
     <title>ADMIN INDOMAS</title>
 </head>
 
 <body>
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px; height: 46.6rem; position: sticky; z-index: 9999;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px; height: 46.6rem; position: fixed; z-index: 99;">
         <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <svg class="bi pe-none me-2" width="40" height="32">
                 <use xlink:href="#bootstrap"></use>
             </svg>
-            <span class="fs-4">Dashboard</span>
+            <span class="fs-4" style="margin-bottom: 6%;">Dashboard</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
