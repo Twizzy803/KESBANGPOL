@@ -17,35 +17,35 @@ include "include/cekdaftar.php";
 
 <body>
     <!-- Sidebar -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;height: 47rem; position: fixed; z-index: 99;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;height: 47rem; position: fixed; z-index: 99;background-color: #00A650 !important;">
         <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <svg class="bi pe-none me-2" width="40" height="32">
+            <svg class="bi pe-none me-2" width="40" height="32" style="background-image: url(assets/kotabatu.png);width: 35%;height: 100%;background-size: cover;">
                 <use xlink:href="#bootstrap"></use>
             </svg>
-            <span class="fs-4" style="margin-bottom: 6%;">Dashboard</span>
+            <h2 style="margin-bottom: 6%; font-size: 10px; color: #fff; font-weight:bold">Formulir Pengajuan, Legalitas dan Rencana Kerja Organisasi Masyarakat Kota Batu</h2>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="index.php" class="nav-link link-body-emphasis" aria-current="page">
+                <a href="index.php" class="nav-link link-body-emphasis" aria-current="page" style="color: #fff !important; font-weight:bold">
                     <i class="bi bi-house-door"></i>
                     Home
                 </a>
             </li>
             <li>
-                <a href="data.php" class="nav-link link-body-emphasis">
+                <a href="data.php" class="nav-link link-body-emphasis" style="color: #fff !important; font-weight:bold">
                     <i class="bi bi-file-earmark-bar-graph"></i>
                     Data Ormas
                 </a>
             </li>
             <li>
-                <a href="daftar.php" class="nav-link active">
+                <a href="daftar.php" class="nav-link active" style="color: #000; background-color: #fff; font-weight: bold;">
                     <i class="bi bi-person-plus"></i>
                     Daftar Akun
                 </a>
             </li>
             <li>
-                <a href="akun.php" class="nav-link link-body-emphasis">
+                <a href="akun.php" class="nav-link link-body-emphasis" style="color: #fff !important; font-weight:bold">
                     <i class="bi bi-person-badge"></i>
                     Akun Ormas
                 </a>

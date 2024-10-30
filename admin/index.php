@@ -20,35 +20,38 @@ include "function.php"; ?>
       <h1>Home</h1>
       <hr>
       <div class="home1">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Data Ormas</h5>
-            <div class="fungsi" style="margin-right: 1rem;">
-              <i class="bi bi-file-earmark-bar-graph"></i>
-              <h6 class="card-subtitle mb-2 text-body-secondary"><?php getDataOrmas() ?></h6>
+        <div class="card" style="width: 15rem;">
+          <a href="data.php" style="text-decoration: none; color:#000">
+            <div class="card-body">
+              <h5 class="card-title">Data Ormas</h5>
+              <div class="fungsi" style="margin-right: 1rem;">
+                <i class="bi bi-file-earmark-bar-graph"></i>
+                <h6 class="card-subtitle mb-2 text-body-secondary"><?php getDataOrmas() ?></h6>
+              </div>
             </div>
-            <a href="data.php" class="card-link">Card link</a>
-          </div>
+          </a>
         </div>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Daftar Akun</h5>
-            <div class="fungsi" style="margin-right: 7rem;">
-              <i class="bi bi-person-plus"></i>
-              <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+        <div class="card" style="width: 15rem;">
+          <a href="daftar.php" style="text-decoration: none; color: #000;">
+            <div class="card-body">
+              <h5 class="card-title">Daftar Akun</h5>
+              <div class="fungsi" style="margin-right: 7rem;">
+                <i class="bi bi-person-plus"></i>
+                <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+              </div>
             </div>
-            <a href="daftar.php" class="card-link">Card link</a>
-          </div>
+          </a>
         </div>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Akun Ormas</h5>
-            <div class="fungsi" style="margin-right: 1rem;">
-              <i class="bi bi-person-badge"></i>
-              <h6 class="card-subtitle mb-2 text-body-secondary"><?php getAkunOrmas() ?></h6>
+        <div class="card" style="width: 15rem;">
+          <a href="akun.php" style="text-decoration: none; color: #000;">
+            <div class="card-body">
+              <h5 class="card-title">Akun Ormas</h5>
+              <div class="fungsi" style="margin-right: 1rem;">
+                <i class="bi bi-person-badge"></i>
+                <h6 class="card-subtitle mb-2 text-body-secondary"><?php getAkunOrmas() ?></h6>
+              </div>
             </div>
-            <a href="akun.php" class="card-link">Card link</a>
-          </div>
+          </a>
         </div>
       </div>
     </div>
