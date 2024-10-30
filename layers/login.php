@@ -18,7 +18,7 @@ include "..\include\koneksi.php";
     <div class="login">
         <div class="logo_login">
             <img src="../assets/gambar/logobatu.png" alt="" style="width: 112px;">
-            <img src="../assets/gambar/polije.png" alt="" style="margin-left: 50px; width: 145px;">
+            <img src="../assets/gambar/KESBANG.png" alt="" style="margin-left: 50px; width: 145px;">
         </div>
         <?php if (isset($_GET['gagal'])): ?>
             <button class="btn btn-danger mb-4 uppercase" style="margin-top: 2%; width:40%">
