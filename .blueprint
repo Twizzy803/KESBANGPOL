@@ -1,0 +1,27 @@
+created:
+    - database/factories/LoginFactory.php
+    - database/factories/OrmasFactory.php
+    - database/factories/KategoriOrmasFactory.php
+    - database/factories/DokumenFactory.php
+    - database/factories/StoriesFactory.php
+    - database/factories/GalleryFactory.php
+    - database/migrations/2024_11_20_133450_create_logins_table.php
+    - database/migrations/2024_11_20_133451_create_ormas_table.php
+    - database/migrations/2024_11_20_133452_create_kategori_ormas_table.php
+    - database/migrations/2024_11_20_133453_create_dokumens_table.php
+    - database/migrations/2024_11_20_133454_create_stories_table.php
+    - database/migrations/2024_11_20_133455_create_galleries_table.php
+    - app/Models/login.php
+    - app/Models/ormas.php
+    - app/Models/kategori_ormas.php
+    - app/Models/dokumen.php
+    - app/Models/stories.php
+    - app/Models/gallery.php
+models:
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
+    login: { email: string, password: string, role: 'enum:admin,ormas', relationships: { hasMany: stories } }
+    ormas: { pemohon: string, telp: string, email: string, password: string, nama_ormas: string, alamat: text, struktur_pengurus: text, jumlah_anggota: int, kategori_ormas_id: 'id foreign:kategori_ormas.id', relationships: { hasOne: dokumen, belongsTo: kategori_ormas } }
+    kategori_ormas: { nama: string, relationships: { hasOne: ormas } }
+    dokumen: { ormas_id: 'id foreign:ormas.id', nama: string, path: text, relationships: { belongsTo: ormas } }
+    stories: { login_id: 'id foreign:login.id', cerita: text, relationships: { hasMany: gallery, belongsTo: login } }
+    gallery: { stories_id: 'id foreign:stories.id', path: text, relationships: { belongsTo: stories } }

@@ -1,0 +1,41 @@
+models:
+  login:
+    email: string
+    password: string
+    role: enum:admin,ormas
+    relationships:
+      hasMany: stories
+  ormas:
+    pemohon: string
+    telp: string
+    email: string
+    password: string
+    nama_ormas: string
+    alamat: text
+    struktur_pengurus: text
+    jumlah_anggota: int
+    kategori_ormas_id: id foreign:kategori_ormas.id
+    relationships:
+      hasOne: dokumen
+      belongsTo: kategori_ormas
+  kategori_ormas:
+    nama: string
+    relationships:
+      hasOne: ormas
+  dokumen:
+    ormas_id: id foreign:ormas.id
+    nama: string
+    path: text
+    relationships:
+      belongsTo: ormas
+  stories:
+    login_id: id foreign:login.id
+    cerita: text
+    relationships:
+      hasMany: gallery
+      belongsTo: login
+  gallery:
+    stories_id: id foreign:stories.id
+    path: text
+    relationships:
+      belongsTo: stories
