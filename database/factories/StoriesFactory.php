@@ -4,8 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Login;
-use App\Models\stories;
+use App\Models\Orma;
+use App\Models\Stories;
 
 class StoriesFactory extends Factory
 {
@@ -22,7 +22,7 @@ class StoriesFactory extends Factory
     public function definition(): array
     {
         return [
-            'login_id' => Login::factory(),
+            'ormas_id' => Orma::factory(),
             'cerita' => $this->faker->text(),
         ];
     }

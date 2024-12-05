@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\KategoriOrma;
-use App\Models\ormas;
+use App\Models\Ormas;
 
 class OrmasFactory extends Factory
 {
@@ -29,8 +29,8 @@ class OrmasFactory extends Factory
             'nama_ormas' => $this->faker->word(),
             'alamat' => $this->faker->text(),
             'struktur_pengurus' => $this->faker->text(),
-            'jumlah_anggota' => $this->faker->word(),
             'kategori_ormas_id' => KategoriOrma::factory(),
+            'status' => $this->faker->randomElement(["setuju","tolak","pending"]),
         ];
     }
 }

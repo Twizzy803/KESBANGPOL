@@ -1,11 +1,12 @@
 models:
-  login:
+  Login:
     email: string
     password: string
     role: enum:admin,ormas
+    remember_token: nullable string
     relationships:
-      hasMany: stories
-  ormas:
+      hasOne: session
+  Ormas:
     pemohon: string
     telp: string
     email: string
@@ -13,29 +14,30 @@ models:
     nama_ormas: string
     alamat: text
     struktur_pengurus: text
-    jumlah_anggota: int
     kategori_ormas_id: id foreign:kategori_ormas.id
+    status: enum:setuju,tolak,pending
     relationships:
-      hasOne: dokumen
-      belongsTo: kategori_ormas
-  kategori_ormas:
+      hasOne: Dokumen
+      belongsTo: KategoriOrmas
+      hasMany: Stories
+  KategoriOrmas:
     nama: string
     relationships:
-      hasOne: ormas
-  dokumen:
+      hasOne: Ormas
+  Dokumen:
     ormas_id: id foreign:ormas.id
     nama: string
     path: text
     relationships:
-      belongsTo: ormas
-  stories:
-    login_id: id foreign:login.id
+      belongsTo: Ormas
+  Stories:
+    ormas_id: id foreign:ormas.id
     cerita: text
     relationships:
       hasMany: gallery
-      belongsTo: login
-  gallery:
+      belongsTo: Ormas
+  Gallery:
     stories_id: id foreign:stories.id
     path: text
     relationships:
-      belongsTo: stories
+      belongsTo: Stories

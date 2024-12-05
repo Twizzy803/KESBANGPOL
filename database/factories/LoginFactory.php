@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\login;
+use App\Models\Login;
 
 class LoginFactory extends Factory
 {
@@ -24,6 +24,7 @@ class LoginFactory extends Factory
             'email' => $this->faker->safeEmail(),
             'password' => $this->faker->password(),
             'role' => $this->faker->randomElement(["admin","ormas"]),
+            'remember_token' => $this->faker->uuid(),
         ];
     }
 }
